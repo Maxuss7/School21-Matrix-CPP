@@ -35,19 +35,19 @@ $(OBJ_DIR)/%.test.o: $(TEST_DIR)/%.cpp | $(OBJ_DIR)
 
 test: $(OBJECTS) $(TEST_OBJECTS)
 	$(CXX) $^ -o $@ $(GTEST_FLAGS) --coverage
-
-run_tests:
 	./test
 
 clang:
 	clang-format -i $(SRC_DIR)/*.cpp $(INCLUDES)/*.h $(TEST_DIR)/*.cpp
 
-coverage: test run_tests
+coverage: test
 	@mkdir -p coverage_html
 	gcovr -r . --html --html-details -o coverage_html/index.html
 	@echo "HTML coverage report: coverage_html/index.html"
 	@which xdg-open > /dev/null && xdg-open coverage_html/index.html || echo "Open manually"
 
-
 clean:
 	rm -rf $(OBJ_DIR) *.a test coverage_html
+
+valgrind:
+	valgrind --tool=memcheck --leak-check=yes ./test

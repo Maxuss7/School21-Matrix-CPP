@@ -13,6 +13,8 @@ class S21Matrix {
   void CopyMatrix(const S21Matrix& other);
   void MoveMatrix(S21Matrix&& other);
 
+  S21Matrix GetMinor(int row, int col) const;
+
  public:
   S21Matrix();
   S21Matrix(int rows, int cols);
@@ -31,7 +33,6 @@ class S21Matrix {
   void MulNumber(double num);
   void MulMatrix(const S21Matrix& other);
   S21Matrix Transpose() const;
-  S21Matrix GetMinor(int row, int col) const;
   S21Matrix CalcComplements() const;
   double Determinant() const;
   S21Matrix InverseMatrix() const;
@@ -51,7 +52,5 @@ class S21Matrix {
   double& operator()(int row, int col);
   const double& operator()(int row, int col) const;
 };
-
-S21Matrix operator*(double num, const S21Matrix& matrix);
 
 #endif

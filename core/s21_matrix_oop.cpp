@@ -70,6 +70,8 @@ S21Matrix::S21Matrix(S21Matrix&& other) noexcept {
 
 S21Matrix::~S21Matrix() { FreeMemory(); }
 
+// ======== PUBLIC METHODS ========
+
 // ======== ACCESSORS ========
 int S21Matrix::GetRows() const { return rows_; }
 int S21Matrix::GetCols() const { return cols_; }
@@ -267,8 +269,4 @@ const double& S21Matrix::operator()(int row, int col) const {
   if (row < 0 || row >= rows_ || col < 0 || col >= cols_)
     throw std::out_of_range("Index out of range");
   return matrix_[row][col];
-}
-
-S21Matrix operator*(double num, const S21Matrix& matrix) {
-  return matrix * num;
 }
