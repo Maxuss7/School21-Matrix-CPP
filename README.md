@@ -1,7 +1,7 @@
 # 🧮 Matrix Library in C++
 
 **Description**:  
-An object-oriented matrix manipulation library written in modern **C++20**.  
+An object-oriented matrix manipulation library written in C++.  
 It provides essential matrix operations (addition, subtraction, multiplication), transformations (transposition), and advanced features such as determinant, complements, and inverse matrix calculation.
 
 Designed with clean architecture, test-driven development, and full code coverage in mind.
