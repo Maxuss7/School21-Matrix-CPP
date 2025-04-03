@@ -33,7 +33,7 @@ Designed with clean architecture, test-driven development, and full code coverag
 #### **1. Clone the repository**
 ```bash
 git clone https://github.com/Maxuss7/School21-Matrix-CPP.git
-cd School21-Matrix-CPP.git
+cd School21-Matrix-CPP
 ```
 
 ---
